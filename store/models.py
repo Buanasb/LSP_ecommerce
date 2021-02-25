@@ -1,3 +1,4 @@
+#untuk mendefinisikan model dan attribut yang nanti akan dimigarate ke database 
 from django.db import models
 
 

@@ -123,7 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     Path.joinpath(BASE_DIR, 'static')
 ]
-
+#untuk menyimpan data "image" ke dalam file images yang berada pada file static
 MEDIA_URL = '/images/'
 
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'static/images')
