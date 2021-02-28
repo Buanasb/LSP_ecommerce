@@ -3,21 +3,23 @@
 <html>
 
 <head>
-    <title>Ecommerce Sederhana</title>
+    <title>Guitar</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <!-- import css bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/utama.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/desc.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/spe.css' %}">
 
 </head>
 
 <body>
     <!-- Untuk Membuat navbar menggunakan framework bootstrap -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="{% url 'store' %}">Toko Guitar</a>
+        <a class="navbar-brand" href="{% url 'store' %}">Donova Guitar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,19 +28,35 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'store' %}">Store <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{% url 'store' %}"><span class="sr-only">(current)</span></a>
                 </li>
-
             </ul>
-            <div class="form-inline my-2 my-lg-0">
-                <a href="#" class="btn btn-warning">Login</a>
-
-                <a href="{% url 'cart' %}">
-                    <img id="cart-icon" src="{% static 'images/cart.png' %}">
-                </a>
-                <p id="cart-total">0</p>
-
+            {% if user.is_authenticated %}
+            <div class="form-inline my-2 my-lg-0 login">
+                <div class="form-inline my-2 my-lg-0">
+                    <div class="row">
+                        <div class="col">
+                            <div class="btn btn-secondary btn-sm bg-transparent   " disabled>Welcome! {{user.username}}
+                            </div>
+                        </div>
+                        <div class="col">
+                            <a href="{% url 'logout' %}" class="btn btn-warning">Logout</a>
+                        </div>
+                    </div>
+                </div>
             </div>
+            {% else %}
+            <div class="form-inline my-2 my-lg-0 logout">
+                <div class="row">
+                    <div class="col">
+                        <a href="{% url 'login' %}" class="btn btn-warning">Login</a>
+                    </div>
+                    <div class="col register">
+                        <a href="{% url 'register' %}" class="btn btn-warning">Register</a>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
         </div>
     </nav>
 

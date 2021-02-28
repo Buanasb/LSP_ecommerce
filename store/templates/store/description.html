@@ -1,0 +1,70 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<p class="sub_cont_tit">Features</p>
+<div class="row">
+    <div class="col-lg-6 box">
+        <div class="box-element">
+            <p class="desc roboto">{{products.description.topc_1}}</p>
+            <p class="txt">{{products.description.desc_1}}</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-element">
+            <div class=img>
+                <img src={{products.description.image_1}}>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="box-element">
+            <div class=img>
+                <img src={{products.description.image_2}}>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-element">
+            <p class="desc roboto">{{products.description.topc_2}}</p>
+            <p class="txt">{{products.description.desc_2}}</p>
+        </div>
+    </div>
+</div>
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <p class="desc roboto">{{products.description.topc_3}}</p>
+            <p class="txt">{{products.description.desc_3}}</p>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-element">
+            <div class=img>
+                <img src={{products.description.image_3}}>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row">
+
+    <div class="col-lg-6">
+        <div class="box-element">
+            <div class=img>
+                <img src={{products.description.image_4}}>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <div class="box-element">
+            <p class="desc roboto">{{products.description.topc_4}}</p>
+            <p class="txt">{{products.description.desc_4}}</p>
+        </div>
+    </div>
+
+</div>
+{% endblock content %}

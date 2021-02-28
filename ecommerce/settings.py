@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'store.apps.StoreConfig',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,10 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     Path.joinpath(BASE_DIR, 'static')
 ]
+
+LOGIN_REDIRECT_URL = 'store'
+
+LOGIN_URL = 'login'
 #untuk menyimpan data "image" ke dalam file images yang berada pada file static
 MEDIA_URL = '/images/'
 
